@@ -1,0 +1,21 @@
+C:\Users\vince\source\repos\WorldBox Mods\WorldBox Mods\bin\Debug\icon.png
+C:\Users\vince\source\repos\WorldBox Mods\WorldBox Mods\bin\Debug\mod.json
+C:\Users\vince\source\repos\WorldBox Mods\WorldBox Mods\bin\Debug\WorldBox Mods.dll
+C:\Users\vince\source\repos\WorldBox Mods\WorldBox Mods\bin\Debug\WorldBox Mods.pdb
+C:\Users\vince\source\repos\WorldBox Mods\WorldBox Mods\bin\Debug\System.Data.Common.dll
+C:\Users\vince\source\repos\WorldBox Mods\WorldBox Mods\bin\Debug\System.Diagnostics.StackTrace.dll
+C:\Users\vince\source\repos\WorldBox Mods\WorldBox Mods\bin\Debug\System.Diagnostics.Tracing.dll
+C:\Users\vince\source\repos\WorldBox Mods\WorldBox Mods\bin\Debug\System.Globalization.Extensions.dll
+C:\Users\vince\source\repos\WorldBox Mods\WorldBox Mods\bin\Debug\System.IO.Compression.dll
+C:\Users\vince\source\repos\WorldBox Mods\WorldBox Mods\bin\Debug\System.Net.Http.dll
+C:\Users\vince\source\repos\WorldBox Mods\WorldBox Mods\bin\Debug\System.Net.Sockets.dll
+C:\Users\vince\source\repos\WorldBox Mods\WorldBox Mods\bin\Debug\System.Runtime.Serialization.Primitives.dll
+C:\Users\vince\source\repos\WorldBox Mods\WorldBox Mods\bin\Debug\System.Security.Cryptography.Algorithms.dll
+C:\Users\vince\source\repos\WorldBox Mods\WorldBox Mods\bin\Debug\System.Security.SecureString.dll
+C:\Users\vince\source\repos\WorldBox Mods\WorldBox Mods\bin\Debug\System.Threading.Overlapped.dll
+C:\Users\vince\source\repos\WorldBox Mods\WorldBox Mods\bin\Debug\System.Xml.XPath.XDocument.dll
+C:\Users\vince\source\repos\WorldBox Mods\WorldBox Mods\obj\Debug\WorldBox Mods.csproj.CoreCompileInputs.cache
+C:\Users\vince\source\repos\WorldBox Mods\WorldBox Mods\obj\Debug\WorldBox Mods.csproj.CopyComplete
+C:\Users\vince\source\repos\WorldBox Mods\WorldBox Mods\obj\Debug\WorldBox Mods.dll
+C:\Users\vince\source\repos\WorldBox Mods\WorldBox Mods\obj\Debug\WorldBox Mods.pdb
+C:\Users\vince\source\repos\WorldBox Mods\WorldBox Mods\obj\Debug\WorldBox Mods.csprojAssemblyReference.cache

@@ -1,0 +1,31 @@
+C:\Users\vince\source\repos\WorldBox Mods\WorldBox Mods\bin\Debug\icon.png
+C:\Users\vince\source\repos\WorldBox Mods\WorldBox Mods\bin\Debug\mod.json
+C:\Users\vince\source\repos\WorldBox Mods\WorldBox Mods\bin\Debug\WorldBox Mods.dll
+C:\Users\vince\source\repos\WorldBox Mods\WorldBox Mods\bin\Debug\WorldBox Mods.pdb
+C:\Users\vince\source\repos\WorldBox Mods\WorldBox Mods\bin\Debug\System.Data.Common.dll
+C:\Users\vince\source\repos\WorldBox Mods\WorldBox Mods\bin\Debug\System.Diagnostics.StackTrace.dll
+C:\Users\vince\source\repos\WorldBox Mods\WorldBox Mods\bin\Debug\System.Diagnostics.Tracing.dll
+C:\Users\vince\source\repos\WorldBox Mods\WorldBox Mods\bin\Debug\System.Globalization.Extensions.dll
+C:\Users\vince\source\repos\WorldBox Mods\WorldBox Mods\bin\Debug\System.IO.Compression.dll
+C:\Users\vince\source\repos\WorldBox Mods\WorldBox Mods\bin\Debug\System.Net.Http.dll
+C:\Users\vince\source\repos\WorldBox Mods\WorldBox Mods\bin\Debug\System.Net.Sockets.dll
+C:\Users\vince\source\repos\WorldBox Mods\WorldBox Mods\bin\Debug\System.Runtime.Serialization.Primitives.dll
+C:\Users\vince\source\repos\WorldBox Mods\WorldBox Mods\bin\Debug\System.Security.Cryptography.Algorithms.dll
+C:\Users\vince\source\repos\WorldBox Mods\WorldBox Mods\bin\Debug\System.Security.SecureString.dll
+C:\Users\vince\source\repos\WorldBox Mods\WorldBox Mods\bin\Debug\System.Threading.Overlapped.dll
+C:\Users\vince\source\repos\WorldBox Mods\WorldBox Mods\bin\Debug\System.Xml.XPath.XDocument.dll
+C:\Users\vince\source\repos\WorldBox Mods\WorldBox Mods\obj\Debug\WorldResilience.csprojAssemblyReference.cache
+C:\Users\vince\source\repos\WorldBox Mods\WorldBox Mods\obj\Debug\WorldResilience.csproj.CoreCompileInputs.cache
+C:\Users\vince\source\repos\WorldBox Mods\WorldBox Mods\obj\Debug\WorldResilience.csproj.CopyComplete
+C:\Users\vince\source\repos\WorldBox Mods\WorldBox Mods\obj\Debug\WorldBox Mods.dll
+C:\Users\vince\source\repos\WorldBox Mods\WorldBox Mods\obj\Debug\WorldBox Mods.pdb
+D:\Users\Vincent Buisset\Documents\Projet\WorldBox Mods\WorldBox Mods\bin\Debug\icon.png
+D:\Users\Vincent Buisset\Documents\Projet\WorldBox Mods\WorldBox Mods\bin\Debug\mod.json
+D:\Users\Vincent Buisset\Documents\Projet\WorldBox Mods\WorldBox Mods\bin\Debug\WorldBox Mods.dll
+D:\Users\Vincent Buisset\Documents\Projet\WorldBox Mods\WorldBox Mods\bin\Debug\WorldBox Mods.pdb
+D:\Users\Vincent Buisset\Documents\Projet\WorldBox Mods\WorldBox Mods\obj\Debug\WorldResilience.csproj.CoreCompileInputs.cache
+D:\Users\Vincent Buisset\Documents\Projet\WorldBox Mods\WorldBox Mods\obj\Debug\WorldResilience.csproj.CopyComplete
+D:\Users\Vincent Buisset\Documents\Projet\WorldBox Mods\WorldBox Mods\obj\Debug\WorldBox Mods.dll
+D:\Users\Vincent Buisset\Documents\Projet\WorldBox Mods\WorldBox Mods\obj\Debug\WorldBox Mods.pdb
+D:\Users\Vincent Buisset\Documents\Projet\WorldBox Mods\WorldBox Mods\obj\Debug\WorldResilience.csproj.AssemblyReference.cache
+D:\Users\Vincent Buisset\Documents\Projet\WorldBox Mods\WorldBox Mods\bin\Debug\NCMS_memload.dll
