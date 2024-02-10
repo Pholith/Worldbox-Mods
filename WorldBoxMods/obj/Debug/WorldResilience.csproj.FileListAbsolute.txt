@@ -29,3 +29,11 @@ D:\Users\Vincent Buisset\Documents\Projet\WorldBox Mods\WorldBox Mods\obj\Debug\
 D:\Users\Vincent Buisset\Documents\Projet\WorldBox Mods\WorldBox Mods\obj\Debug\WorldBox Mods.pdb
 D:\Users\Vincent Buisset\Documents\Projet\WorldBox Mods\WorldBox Mods\obj\Debug\WorldResilience.csproj.AssemblyReference.cache
 D:\Users\Vincent Buisset\Documents\Projet\WorldBox Mods\WorldBox Mods\bin\Debug\NCMS_memload.dll
+D:\Documents\Projets\Worldbox-Mods\WorldBoxMods\obj\Debug\WorldResilience.csproj.AssemblyReference.cache
+D:\Documents\Projets\Worldbox-Mods\WorldBoxMods\obj\Debug\WorldResilience.csproj.CoreCompileInputs.cache
+D:\Documents\Projets\Worldbox-Mods\WorldBoxMods\obj\Debug\WorldBox Mods.dll
+D:\Documents\Projets\Worldbox-Mods\WorldBoxMods\obj\Debug\WorldBox Mods.pdb
+D:\Documents\Projets\Worldbox-Mods\WorldBoxMods\bin\Debug\icon.png
+D:\Documents\Projets\Worldbox-Mods\WorldBoxMods\bin\Debug\mod.json
+D:\Documents\Projets\Worldbox-Mods\WorldBoxMods\bin\Debug\WorldBox Mods.dll
+D:\Documents\Projets\Worldbox-Mods\WorldBoxMods\bin\Debug\WorldBox Mods.pdb

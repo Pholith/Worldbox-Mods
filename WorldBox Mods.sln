@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
-VisualStudioVersion = 16.0.30621.155
+VisualStudioVersion = 16.0.34301.259
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorldResilience", "WorldBox Mods\WorldResilience.csproj", "{FD43B29F-4CC6-4028-81CC-6DC353021B5C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorldResilience", "WorldBoxMods\WorldResilience.csproj", "{FD43B29F-4CC6-4028-81CC-6DC353021B5C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,6 +20,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {8A419CA5-74B0-45C3-8954-11EF9A0F4000}
+		SolutionGuid = {315C505D-5A3E-441D-99C1-4FD7F2AFDBB8}
 	EndGlobalSection
 EndGlobal

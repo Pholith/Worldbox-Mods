@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>WorldBox_Mods</RootNamespace>
     <AssemblyName>WorldBox Mods</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
     <TargetFrameworkProfile />
@@ -33,22 +33,23 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="0Harmony">
-      <HintPath>D:\Program Files (x86)\Steam\steamapps\common\worldbox\worldbox_Data\StreamingAssets\Mods\NCMS\Core\Assemblies\0Harmony.dll</HintPath>
+      <HintPath>..\..\..\..\ProgramFiles\Steam\steamapps\common\worldbox\worldbox_Data\StreamingAssets\mods\NML\Assemblies\0Harmony.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Assembly-CSharp">
-      <HintPath>D:\Program Files (x86)\Steam\steamapps\common\worldbox\worldbox_Data\Managed\Assembly-CSharp.dll</HintPath>
+      <HintPath>..\..\..\..\ProgramFiles\Steam\steamapps\common\worldbox\worldbox_Data\Managed\Assembly-CSharp.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Assembly-CSharp-firstpass">
-      <HintPath>D:\Program Files (x86)\Steam\steamapps\common\worldbox\worldbox_Data\Managed\Assembly-CSharp-firstpass.dll</HintPath>
+      <HintPath>..\..\..\..\ProgramFiles\Steam\steamapps\common\worldbox\worldbox_Data\Managed\Assembly-CSharp-firstpass.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="NCMS_memload">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\worldbox\worldbox_Data\StreamingAssets\Mods\NCMS_memload.dll</HintPath>
+    <Reference Include="NeoModLoader">
+      <HintPath>..\..\..\..\ProgramFiles\Steam\steamapps\common\worldbox\worldbox_Data\StreamingAssets\mods\NeoModLoader.dll</HintPath>
+      <Private>False</Private>
     </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>D:\Program Files (x86)\Steam\steamapps\common\worldbox\worldbox_Data\Managed\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="System" />
@@ -60,16 +61,16 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
     <Reference Include="UnityEngine">
-      <HintPath>D:\Program Files (x86)\Steam\steamapps\common\worldbox\worldbox_Data\Managed\UnityEngine.dll</HintPath>
+      <HintPath>..\..\..\..\ProgramFiles\Steam\steamapps\common\worldbox\worldbox_Data\Managed\UnityEngine.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="UnityEngine.CoreModule">
-      <HintPath>D:\Program Files (x86)\Steam\steamapps\common\worldbox\worldbox_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
+      <HintPath>..\..\..\..\ProgramFiles\Steam\steamapps\common\worldbox\worldbox_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
       <Private>False</Private>
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Code\Mod.cs" />
+    <Compile Include="Code\WorldResilience.cs" />
     <Compile Include="Code\WorldResilienceLaws.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -77,6 +78,7 @@
     <None Include="mod.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="EmbededResources\" />
@@ -88,7 +90,13 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>7z a "$(ProjectDir)$(ProjectName).mod" "$(ProjectDir)Code\" "$(ProjectDir)EmbededResources\" "$(ProjectDir)icon.png" "$(ProjectDir)mod.json" -tzip
-move /y "$(ProjectDir)$(ProjectName).mod" "D:\Program Files (x86)\Steam\steamapps\common\worldbox\Mods"</PostBuildEvent>
+    <PostBuildEvent>:: 7z a -r "$(ProjectName).mod" "$(TargetDir)\*" -tzip
+:: move /y "$(TargetDir)$(ProjectName).mod" "D:\ProgramFiles\Steam\steamapps\common\worldbox\worldbox_Data\StreamingAssets\mods"
+
+:: xcopy /e /i /q /y "$(ProjectDir)bin\Debug" "D:\ProgramFiles\Steam\steamapps\common\worldbox\worldbox_Data\StreamingAssets\mods\$(ProjectName)"
+
+xcopy /e /i /q /y "$(ProjectDir)Code"  "D:\ProgramFiles\Steam\steamapps\common\worldbox\worldbox_Data\StreamingAssets\mods\$(ProjectName)\"
+xcopy  /q /y "$(ProjectDir)icon.png"  "D:\ProgramFiles\Steam\steamapps\common\worldbox\worldbox_Data\StreamingAssets\mods\$(ProjectName)\"
+xcopy /q /y "$(ProjectDir)mod.json"  "D:\ProgramFiles\Steam\steamapps\common\worldbox\worldbox_Data\StreamingAssets\mods\$(ProjectName)\"</PostBuildEvent>
   </PropertyGroup>
 </Project>

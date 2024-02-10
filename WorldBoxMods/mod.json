@@ -1,8 +1,7 @@
 {
   "name": "World Resilience",
   "author": "Pholith#5515",
-  "version": "0.1.0",
-  "startPoint": "Mod.cs",
+  "version": "0.2.0",
   "description": "The world regrows after you destroyed it!",
-  "iconPath": "icon.png"
+  "iconPath": "icon.png",
 }
