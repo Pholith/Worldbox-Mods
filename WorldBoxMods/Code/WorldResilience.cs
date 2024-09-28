@@ -116,7 +116,7 @@ namespace PholithMods
                 TileIsland tileIsland = islandCalculator.islands[i];
                 if (tileIsland.type == TileLayerType.Ground)
                 {
-                    for (int j = 0; j < MAX_TILES_IN_LIST * 2; j++) // *2 to fill better the list when conditions are rares
+                    for (int j = 0; j < MAX_TILES_IN_LIST * 3; j++) // *3 to fill better the list when conditions are rares
                     {
 
                         WorldTile randomTile = Traverse.Create(tileIsland).Method("getRandomTile", noArgument).GetValue<WorldTile>();
@@ -125,7 +125,7 @@ namespace PholithMods
                             continue;
                         }
 
-                        // rocks to sand
+                        // rocks to dirt
                         if (randomTile.Type.rocks
                             && Traverse.Create(randomTile).Method("IsOceanAround", noArgument).GetValue<bool>())
                         {
@@ -152,8 +152,8 @@ namespace PholithMods
                         foreach (WorldTile neighbor in randomTile.neighbours)
                         {
                             if ((neighbor.Type.ocean || neighbor.Type.canBeFilledWithOcean)
-                                && neighbor.RespectConditionAround((otherTile) => otherTile.Type.ground, 3)
-                                && !dict.ContainsKey(neighbor))
+                                && !dict.ContainsKey(neighbor)
+                                && neighbor.RespectConditionAround((otherTile) => otherTile.Type.ground, 3))
                             {
                                 dict.Add(neighbor, TileLibrary.sand);
                                 break;
@@ -161,9 +161,9 @@ namespace PholithMods
 
                             // ocean to sand expansion
                             if (neighbor.Type.ocean
-                                && neighbor.RespectConditionAround((otherTile) =>
-                                    otherTile.Type.ground, neighbor.TileNoise(3) < 0.2 ? 1 : neighbor.TileNoise(3) < 0.7 ? 2 : 3)
                                 && neighbor.Type.id == TileLibrary.shallow_waters.id
+                                && neighbor.RespectConditionAround((otherTile) =>
+                                    otherTile.Type.ground, neighbor.TileNoise(3) < 0.4 ? 1 : neighbor.TileNoise(3) < 0.85 ? 2 : 3)
                                 && neighbor.RespectConditionInDistance((distanceNeighbor) =>
                                     // No deep ocean around
                                     !(distanceNeighbor.Type.ocean && (distanceNeighbor.Type.id == TileLibrary.close_ocean.id || distanceNeighbor.Type.id == TileLibrary.deep_ocean.id)), 1)
@@ -188,12 +188,24 @@ namespace PholithMods
 
                         // wasteland to dirt
                         if (randomTile.Type.wasteland
-                            && randomTile.RespectConditionAround((otherTile) => otherTile.Type.layerType == TileLayerType.Ground, 3)
-                            && randomTile.RespectConditionAround((otherTile) => otherTile.Type.grass, 1)) // minimum 1 grass
+                            && randomTile.RespectConditionAround((otherTile) => otherTile.Type.grass, 1) // minimum 1 grass
+                            && randomTile.RespectConditionAround((otherTile) => otherTile.Type.layerType == TileLayerType.Ground, 3))
                         {
                             dict.Add(randomTile, Utils.DirtConvertionNoise(randomTile));
                             continue;
                         }
+
+                        // dirt to biome rarely
+                        if (!randomTile.Type.is_biome && randomTile.Type.can_be_biome
+                            && UnityEngine.Random.value < 0.001f
+                            && randomTile.RespectConditionInDistance(
+                                (otherTile) => !randomTile.Type.is_biome && randomTile.Type.can_be_biome))
+                        {
+                            TopTileType tile = BiomeLibrary.pool_biomes.GetRandom().getTile(randomTile);
+                            MapAction.growGreens(randomTile, tile);
+                            continue;
+                        }
+
 
                         // If nothing of this happened, take another random tile, but in entire world this time.
                         // And check for ocean uniformisation
