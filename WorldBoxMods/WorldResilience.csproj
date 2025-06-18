@@ -10,6 +10,7 @@
     <RootNamespace>WorldBox_Mods</RootNamespace>
     <AssemblyName>WorldBox Mods</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetFramework>net48</TargetFramework>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
     <TargetFrameworkProfile />
@@ -32,44 +33,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="0Harmony">
-      <HintPath>..\..\..\..\ProgramFiles\Steam\steamapps\common\worldbox\worldbox_Data\StreamingAssets\mods\NML\Assemblies\0Harmony.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Assembly-CSharp">
-      <HintPath>..\..\..\..\ProgramFiles\Steam\steamapps\common\worldbox\worldbox_Data\Managed\Assembly-CSharp.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Assembly-CSharp-firstpass">
-      <HintPath>..\..\..\..\ProgramFiles\Steam\steamapps\common\worldbox\worldbox_Data\Managed\Assembly-CSharp-firstpass.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="NeoModLoader">
-      <HintPath>..\..\..\..\ProgramFiles\Steam\steamapps\common\worldbox\worldbox_Data\StreamingAssets\mods\NeoModLoader.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Net.Http" />
-    <Reference Include="System.Xml" />
-    <Reference Include="UnityEngine">
-      <HintPath>..\..\..\..\ProgramFiles\Steam\steamapps\common\worldbox\worldbox_Data\Managed\UnityEngine.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="UnityEngine.CoreModule">
-      <HintPath>..\..\..\..\ProgramFiles\Steam\steamapps\common\worldbox\worldbox_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="Code\WorldResilience.cs" />
     <Compile Include="Code\WorldResilienceLaws.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -81,12 +44,20 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="EmbededResources\" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="icon.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="0Harmony">
+      <HintPath>..\packages\0Harmony.dll</HintPath>
+    </Reference>
+    <Reference Include="NeoModLoader">
+      <HintPath>..\packages\NeoModLoader.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
