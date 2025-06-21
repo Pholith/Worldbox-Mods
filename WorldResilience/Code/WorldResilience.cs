@@ -102,12 +102,12 @@ namespace PholithMods
         private static readonly Dictionary<WorldTile, TileType> dict = new Dictionary<WorldTile, TileType>();
         public static bool Prefix()
         {
-            if (!MapBox.instance.worldLaws.world_law_erosion.boolVal)
+            if (!WorldLawLibrary.world_law_erosion.isEnabled())
             {
                 return false;
             }
 
-            IslandsCalculator islandCalculator = Traverse.Create(MapBox.instance).Field<IslandsCalculator>("islandsCalculator").Value;
+            IslandsCalculator islandCalculator = Traverse.Create(MapBox.instance).Field<IslandsCalculator>("islands_calculator").Value;
             dict.Clear();
             islandCalculator.islands.ShuffleOne<TileIsland>();
 
@@ -151,7 +151,7 @@ namespace PholithMods
                         // ocean to sand
                         foreach (WorldTile neighbor in randomTile.neighbours)
                         {
-                            if ((neighbor.Type.ocean || neighbor.Type.canBeFilledWithOcean)
+                            if ((neighbor.Type.ocean || neighbor.Type.can_be_filled_with_ocean)
                                 && !dict.ContainsKey(neighbor)
                                 && neighbor.RespectConditionAround((otherTile) => otherTile.Type.ground, 3))
                             {
@@ -176,7 +176,7 @@ namespace PholithMods
 
                         // sand to dirt
                         if (randomTile.Type.sand
-                            && randomTile.RespectConditionAround((otherTile) => otherTile.Type.layerType == TileLayerType.Ground, 3) // At least 3 grounds near the sand
+                            && randomTile.RespectConditionAround((otherTile) => otherTile.Type.layer_type == TileLayerType.Ground, 3) // At least 3 grounds near the sand
                             && (randomTile.RespectConditionInDistance((otherTile) => !otherTile.Type.ocean, 4)
                                 || randomTile.RespectConditionAround((otherTile) => !otherTile.Type.sand, 3) && randomTile.RespectConditionAround((otherTile) => !otherTile.Type.ocean, 4)) // No ocean near the sand
                             && randomTile.RespectConditionAround((otherTile) => otherTile.Type.can_be_biome || otherTile.Type.grass, 1))
@@ -189,7 +189,7 @@ namespace PholithMods
                         // wasteland to dirt
                         if (randomTile.Type.wasteland
                             && randomTile.RespectConditionAround((otherTile) => otherTile.Type.grass, 1) // minimum 1 grass
-                            && randomTile.RespectConditionAround((otherTile) => otherTile.Type.layerType == TileLayerType.Ground, 3))
+                            && randomTile.RespectConditionAround((otherTile) => otherTile.Type.layer_type == TileLayerType.Ground, 3))
                         {
                             dict.Add(randomTile, Utils.DirtConvertionNoise(randomTile));
                             continue;
@@ -209,7 +209,7 @@ namespace PholithMods
 
                         // If nothing of this happened, take another random tile, but in entire world this time.
                         // And check for ocean uniformisation
-                        randomTile = MapBox.instance.tilesList.GetRandom();
+                        randomTile = Traverse.Create(MapBox.instance).Field<WorldTile[]>("tiles_list").Value.GetRandom();
                         if (randomTile == null || dict.ContainsKey(randomTile)) continue;
 
                         // transform ocean into shallow_water if near surface

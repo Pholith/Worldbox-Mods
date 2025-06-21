@@ -1,0 +1,49 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <Nullable>enable</Nullable>
+    <Title>WorldResilience</Title>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="0Harmony">
+      <HintPath>E:\SteamLibrary\steamapps\common\worldbox\worldbox_Data\StreamingAssets\mods\NML\Assemblies\0Harmony.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>E:\SteamLibrary\steamapps\common\worldbox\worldbox_Data\Managed\Assembly-CSharp.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Assembly-CSharp-firstpass">
+      <HintPath>E:\SteamLibrary\steamapps\common\worldbox\worldbox_Data\Managed\Assembly-CSharp-firstpass.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="NeoModLoader">
+      <HintPath>E:\SteamLibrary\steamapps\common\worldbox\worldbox_Data\StreamingAssets\mods\NeoModLoader.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>E:\SteamLibrary\steamapps\common\worldbox\worldbox_Data\Managed\Newtonsoft.Json.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>E:\SteamLibrary\steamapps\common\worldbox\worldbox_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="mod.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command=":: 7z a -r &quot;$(ProjectName).mod&quot; &quot;$(TargetDir)\*&quot; -tzip&#xD;&#xA;:: move /y &quot;$(TargetDir)$(ProjectName).mod&quot; &quot;D:\ProgramFiles\Steam\steamapps\common\worldbox\worldbox_Data\StreamingAssets\mods&quot;&#xD;&#xA;&#xD;&#xA;:: xcopy /e /i /q /y &quot;$(ProjectDir)bin\Debug&quot; &quot;D:\ProgramFiles\Steam\steamapps\common\worldbox\worldbox_Data\StreamingAssets\mods\$(ProjectName)&quot;&#xD;&#xA;&#xD;&#xA;xcopy /e /i /q /y &quot;$(ProjectDir)Code&quot;  &quot;E:\SteamLibrary\steamapps\common\worldbox\worldbox_Data\StreamingAssets\mods\$(ProjectName)\&quot;&#xD;&#xA;xcopy  /q /y &quot;$(ProjectDir)icon.png&quot;  &quot;E:\SteamLibrary\steamapps\common\worldbox\worldbox_Data\StreamingAssets\mods\$(ProjectName)\&quot;&#xD;&#xA;xcopy /q /y &quot;$(ProjectDir)mod.json&quot;  &quot;E:\SteamLibrary\steamapps\common\worldbox\worldbox_Data\StreamingAssets\mods\$(ProjectName)\&quot;" />
+  </Target>
+
+</Project>
